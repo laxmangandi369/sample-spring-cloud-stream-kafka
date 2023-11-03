@@ -42,6 +42,29 @@ public class OrderService {
             new Order(++orderId, 11, 1, 100, LocalDateTime.now(), OrderType.BUY, 1050)
     ));
 
+    private static long orderId = 0;
+    private static final Random r = new Random();
+
+    private final Map<Integer, Integer> prices = Map.of(
+            1, 1000,
+            2, 2000,
+            3, 5000,
+            4, 1500,
+            5, 2500,
+            6, 1000,
+            7, 2000,
+            8, 5000,
+            9, 1500,
+            10, 2500);
+
+    LinkedList<Order> buyOrders = new LinkedList<>(List.of(
+            new Order(++orderId, 1, 1, 100, LocalDateTime.now(), OrderType.BUY, 1000),
+            new Order(++orderId, 2, 1, 200, LocalDateTime.now(), OrderType.BUY, 1050),
+            new Order(++orderId, 3, 1, 100, LocalDateTime.now(), OrderType.BUY, 1030),
+            new Order(++orderId, 4, 1, 200, LocalDateTime.now(), OrderType.BUY, 1050),
+            new Order(++orderId, 5, 1, 200, LocalDateTime.now(), OrderType.BUY, 1000),
+            new Order(++orderId, 11, 1, 100, LocalDateTime.now(), OrderType.BUY, 1050)
+    ));
     LinkedList<Order> sellOrders = new LinkedList<>(List.of(
             new Order(++orderId, 6, 1, 200, LocalDateTime.now(), OrderType.SELL, 950),
             new Order(++orderId, 7, 1, 100, LocalDateTime.now(), OrderType.SELL, 1000),
